@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Accounts</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            overflow: hidden;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(15, 15, 15, 0.4); /* شفافية أكبر لرؤية النجوم */
+            padding: 60px;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+            position: relative;
+            z-index: 2; /* يظهر فوق النجوم */
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            color: #00eaff;
+            letter-spacing: 5px;
+            text-shadow: 0 0 30px rgba(0, 234, 255, 0.9);
+        }
+
+        a {
+            display: block;
+            margin: 15px 0;
+            padding: 15px;
+            width: 100%;
+            max-width: 350px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            border: 1px solid #00eaff;
+        }
+
+        a:hover {
+            background-color: #00eaff;
+            color: #000;
+            transform: translateY(-8px);
+            box-shadow: 0 0 20px rgba(0, 234, 255, 0.8), 0 0 40px rgba(0, 234, 255, 0.5);
+        }
+
+        a:active {
+            transform: translateY(0);
+            box-shadow: none;
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .stars div {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: moveStars 10s linear infinite;
+        }
+
+        @keyframes moveStars {
+            0% {
+                transform: translateY(0); /* يبدأ التحرك من موقع ظاهر */
+            }
+            100% {
+                transform: translateY(100vh); /* التحرك للأسفل خارج الشاشة */
+            }
+        }
+
+        /* تخصيص النجوم لتحركها بشكل عشوائي وزيادة عددها */
+        /* النجوم التي تبدأ وهي ظاهرة على الشاشة */
+.stars div:nth-child(1) { top: 30vh; left: 15%; animation-duration: 20s; }
+.stars div:nth-child(2) { top: 60vh; left: 30%; animation-duration: 18s; }
+.stars div:nth-child(3) { top: 45vh; left: 50%; animation-duration: 22s; }
+.stars div:nth-child(4) { top: 80vh; left: 70%; animation-duration: 19s; }
+.stars div:nth-child(5) { top: 10vh; left: 85%; animation-duration: 21s; }
+
+/* النجوم التي تبدأ من خارج الشاشة */
+.stars div:nth-child(6) { top: -10vh; left: 20%; animation-duration: 25s; }
+.stars div:nth-child(7) { top: -15vh; left: 40%; animation-duration: 23s; }
+.stars div:nth-child(8) { top: -5vh; left: 60%; animation-duration: 17s; }
+.stars div:nth-child(9) { top: -20vh; left: 80%; animation-duration: 26s; }
+.stars div:nth-child(10) { top: -30vh; left: 90%; animation-duration: 20s; }
+
+/* توزيع المزيد من النجوم بشكل عشوائي بين الظاهرة والتي تبدأ خارج الشاشة */
+.stars div:nth-child(11) { top: 25vh; left: 10%; animation-duration: 18s; }
+.stars div:nth-child(12) { top: -10vh; left: 15%; animation-duration: 24s; }
+.stars div:nth-child(13) { top: 40vh; left: 35%; animation-duration: 19s; }
+.stars div:nth-child(14) { top: -5vh; left: 45%; animation-duration: 22s; }
+.stars div:nth-child(15) { top: 55vh; left: 60%; animation-duration: 21s; }
+        .stars div:nth-child(16) { top: 20vh; left: 80%; animation-duration: 20s; }
+        .stars div:nth-child(17) { top: 17vh; left: 85%; animation-duration: 21s; }
+        .stars div:nth-child(18) { top: 10vh; left: 90%; animation-duration: 19s; }
+        .stars div:nth-child(19) { top: 3vh; left: 95%; animation-duration: 18s; }
+        .stars div:nth-child(20) { top: 7vh; left: 97%; animation-duration: 22s; }
+
+        /* المزيد من النجوم */
+        .stars div:nth-child(21) { top: 10vh; left: 6%; animation-duration: 15s; }
+        .stars div:nth-child(22) { top: 20vh; left: 12%; animation-duration: 13s; }
+        .stars div:nth-child(23) { top: 15vh; left: 18%; animation-duration: 17s; }
+        .stars div:nth-child(24) { top: 5vh; left: 22%; animation-duration: 21s; }
+        .stars div:nth-child(25) { top: 8vh; left: 28%; animation-duration: 24s; }
+        .stars div:nth-child(26) { top: 12vh; left: 32%; animation-duration: 16s; }
+        .stars div:nth-child(27) { top: 25vh; left: 38%; animation-duration: 25s; }
+        .stars div:nth-child(28) { top: 18vh; left: 44%; animation-duration: 19s; }
+        .stars div:nth-child(29) { top: 22vh; left: 48%; animation-duration: 22s; }
+        .stars div:nth-child(30) { top: 10vh; left: 52%; animation-duration: 14s; }
+        .stars div:nth-child(31) { top: 7vh; left: 58%; animation-duration: 23s; }
+        .stars div:nth-child(32) { top: 15vh; left: 62%; animation-duration: 19s; }
+        .stars div:nth-child(33) { top: 25vh; left: 68%; animation-duration: 18s; }
+        .stars div:nth-child(34) { top: 5vh; left: 74%; animation-duration: 17s; }
+        .stars div:nth-child(35) { top: 12vh; left: 78%; animation-duration: 16s; }
+        .stars div:nth-child(36) { top: 20vh; left: 82%; animation-duration: 20s; }
+        .stars div:nth-child(37) { top: 17vh; left: 88%; animation-duration: 18s; }
+        .stars div:nth-child(38) { top: 10vh; left: 94%; animation-duration: 24s; }
+        .stars div:nth-child(39) { top: 3vh; left: 96%; animation-duration: 21s; }
+        .stars div:nth-child(40) { top: 7vh; left: 98%; animation-duration: 25s; }
+
+        /* المزيد من النجوم */
+        .stars div:nth-child(41) { top: 10vh; left: 6%; animation-duration: 15s; }
+        .stars div:nth-child(42) { top: 20vh; left: 12%; animation-duration: 13s; }
+        .stars div:nth-child(43) { top: 15vh; left: 18%; animation-duration: 17s; }
+        .stars div:nth-child(44) { top: 5vh; left: 22%; animation-duration: 21s; }
+        .stars div:nth-child(45) { top: 8vh; left: 28%; animation-duration: 24s; }
+        .stars div:nth-child(46) { top: 12vh; left: 32%; animation-duration: 16s; }
+        .stars div:nth-child(47) { top: 25vh; left: 38%; animation-duration: 25s; }
+        .stars div:nth-child(48) { top: 18vh; left: 44%; animation-duration: 19s; }
+        .stars div:nth-child(49) { top: 22vh; left: 48%; animation-duration: 22s; }
+        .stars div:nth-child(50) { top: 10vh; left: 52%; animation-duration: 14s; }
+
+        /* إضافة المزيد من النجوم */
+        .stars div:nth-child(51) { top: 7vh; left: 58%; animation-duration: 23s; }
+        .stars div:nth-child(52) { top: 15vh; left: 62%; animation-duration: 19s; }
+        .stars div:nth-child(53) { top: 25vh; left: 68%; animation-duration: 18s; }
+        .stars div:nth-child(54) { top: 5vh; left: 74%; animation-duration: 17s; }
+        .stars div:nth-child(55) { top: 12vh; left: 78%; animation-duration: 16s; }
+        .stars div:nth-child(56) { top: 20vh; left: 82%; animation-duration: 20s; }
+        .stars div:nth-child(57) { top: 17vh; left: 88%; animation-duration: 18s; }
+        .stars div:nth-child(58) { top: 10vh; left: 94%; animation-duration: 24s; }
+        .stars div:nth-child(59) { top: 3vh; left: 96%; animation-duration: 21s; }
+        .stars div:nth-child(60) { top: 7vh; left: 98%; animation-duration: 25s; }
+
+        /* حتى الآن لدينا 60 نجمة متحركة بأوقات مختلفة */
+        @media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    a {
+        font-size: 1em;
+        padding: 10px;
+    }
+}
+.container {
+    width: 90%; /* استخدام عرض مرن */
+    max-width: 350px;
+    ...
+}
+@media (max-width: 600px) {
+    body {
+        padding: 20px; /* إضافة مسافة داخلية */
+    }
+
+    h1 {
+        font-size: 2.5em; /* تصغير حجم الخط للأجهزة الصغيرة */
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="stars">
+        <!-- تكرار النجوم 60 مرة -->
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="container">
+        <h1>My Accounts</h1>
+        <a href="https://www.instagram.com/amr_mostvfa/profilecard/?igsh=MXh6b2N1OGlzeTd5dA==" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/amr.mostvfa?mibextid=ZbWKwL" target="_blank">Facebook</a>
+        <a href="https://www.tiktok.com/@amr_mostvfa?_t=8qovcsGbZl2&_r=1" target="_blank">TikTok</a>
+        <a href="https://www.snapchat.com/add/amr_mostvfa?share_id=Ic-w9LlG1c0&locale=en-GB" target="_blank">Snapchat</a>
+        <a href="https://x.com/amr_mostvfa?t=ExdJMLQNtnzLLoKvxj9jqQ&s=09" target="_blank">X (Twitter)</a>
+        <a href="https://109188596324515647985.sarhne.com" target="_blank">Sarhne</a>
+        <a href="https://ngl.link/amr_mostvfa1" target="_blank">NGL</a>
+    </div>
+</body>
+</html>
